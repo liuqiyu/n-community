@@ -75,3 +75,22 @@ $('.login-submit').on('click', function() {
         },
     });
 });
+
+/**
+ *注销
+ */
+$('.logout-submit').on('click', function() {
+    $.ajax({
+        type: 'get',
+        url: '/user/logout',
+        data: formData,
+        dataType: "json",
+        success: function(data) {
+            if (data.code === 200) {
+                location.href = '/user/index';
+            } else {
+                alert(data.message);
+            }
+        },
+    });
+});

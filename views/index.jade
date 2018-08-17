@@ -1,6 +1,18 @@
 extends layout
 
 block content
-  h1= title
-  p Welcome to #{title}
-  a 123
+  #box
+  .cent-box
+    .cent-box-header
+      h1.main-title.hide Coding
+      h2.sub-title 热爱生活 - 热爱coding
+
+    .cont-main.clearfix
+      .button
+        button(type="submit" class="login-btn register-btn logout-submit" id="button") 注销
+
+  script(src='../javascripts/particles.js')
+  script(src='../javascripts/background.js')
+  script(src='../javascripts/jquery.min.js')
+  script(src='../javascripts/layer/layer.js')
+  script(src='../javascripts/index.js')

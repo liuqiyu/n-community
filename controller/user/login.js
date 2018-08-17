@@ -13,10 +13,20 @@ var login = function(req, res) {
             }
             if (rows.length > 0) {
                 if (rows[0].password == password) {
-                    res.send({
-                        code: 200,
-                        status: 'success',
-                        message: '登录成功！',
+                    req.session.regenerate(function() {
+                        if(err) {
+                            return res.send({
+                                code: 500,
+                                status: 'error',
+                                message: '登录失败！！',
+                            });
+                        }
+                        req.session.name = rows[0].name;
+                        res.send({
+                            code: 200,
+                            status: 'success',
+                            message: '登录成功！',
+                        });
                     });
                 } else {
                     res.send({
