@@ -25,7 +25,6 @@ var register = function(req, res) {
                 });
             } else {
                 var sql = "insert into user (name, password) values ('" + name + "', '" + password + "')";
-                console.log(sql);
                 db.query(sql, function(err, rows, fields) {
                     if (err) {
                         return console.error(err);

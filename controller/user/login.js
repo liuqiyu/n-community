@@ -26,6 +26,10 @@ var login = function(req, res) {
                             code: 200,
                             status: 'success',
                             message: '登录成功！',
+                            data: {
+                                sessionID: req.sessionID,
+                                name: rows[0].name,
+                            },
                         });
                     });
                 } else {

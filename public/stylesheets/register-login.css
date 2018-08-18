@@ -35,7 +35,7 @@ canvas{
 	z-index: 1;
 }
 .cent-box{
-	width: 300px;
+	width: 400px;
 	height: 440px;
 	vertical-align: middle;
 	white-space: normal;
@@ -44,7 +44,7 @@ canvas{
 	z-index: 2;
 	left: 50%;
 	top: 50%;
-	margin-left: -150px;
+	margin-left: -200px;
 	margin-top: -220px;
 }
 .register-box{

@@ -68,6 +68,7 @@ $('.login-submit').on('click', function() {
         dataType: "json",
         success: function(data) {
             if (data.code === 200) {
+                window.localStorage.setItem('userinfo', JSON.stringify(data.data));
                 location.href = '/user/index';
             } else {
                 alert(data.message);
@@ -83,11 +84,9 @@ $('.logout-submit').on('click', function() {
     $.ajax({
         type: 'get',
         url: '/user/logout',
-        data: formData,
-        dataType: "json",
         success: function(data) {
             if (data.code === 200) {
-                location.href = '/user/index';
+                location.href = '/user/login';
             } else {
                 alert(data.message);
             }
