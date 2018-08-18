@@ -41,6 +41,11 @@ app.use(function(req, res, next) {
     next();
 });
 
+app.use(function(req, res, next) {
+    console.log(123);
+    next();
+});
+
 router(app);
 
 module.exports = app;
