@@ -14,7 +14,7 @@ var index = function(req, res, next) {
                 data: err,
             });
         }
-        // console.log(rows);
+
         console.log(rows[0]);
         res.render('index', {
             title: '首页',
