@@ -33,7 +33,6 @@ app.use(session({
 
 app.use(function(req, res, next) {
     var url = req.url;
-    console.log(123);
     // 判断不拦截的路由 出/login和/之外的都拦截
     if (url != '/user/login' && !req.session.name && url != '/user/register') {
         res.render('login', { title: 'Express' });
