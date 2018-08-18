@@ -1,0 +1,77 @@
+body,ol,ul,h1,h2,h3,h4,h5,h6,p,th,td,dl,dd,form,fieldset,legend,input,textarea,select{margin:0;padding:0}
+body{font:12px "微软雅黑","Arial Narrow",HELVETICA;background:#fff;-webkit-text-size-adjust:100%}
+a{color:#172c45;text-decoration:none}
+a:hover{color:#cd0200;text-decoration:none}
+em{font-style:normal}
+li{list-style:none}
+img{border:0;vertical-align:middle}
+table{border-collapse:collapse;border-spacing:0}
+
+* {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+.clearfix:before,
+.clearfix:after {
+  display: table;
+  content: "";
+}
+
+.clearfix:after {
+  clear: both
+}
+
+body {
+  font-family: "Microsoft YaHei", "微软雅黑", "Helvetica Neue", arial, '\5b8b\4f53';
+  background-color: #e9ebee;
+  font-size: 12px;
+  color: #333;
+  margin: 0 auto;
+  min-width: 1200px;
+}
+
+.c-danger {
+  color: #F56C6C;
+}
+
+.c-primart {
+  color: #4267b2;
+}
+
+.c-warning {
+  color: #E6A23C;
+}
+
+.c-success {
+  color: #67C23A;
+}
+
+.c-info {
+  color: #909399;
+}
+
+/*定义滚动条高宽及背景 高宽分别对应横竖滚动条的尺寸*/
+.index::-webkit-scrollbar, .el-table__body-wrapper::-webkit-scrollbar
+{
+  width: 10px;
+  height: 10px;
+  background-color: #F5F5F5;
+}
+
+/*定义滚动条轨道 内阴影+圆角*/
+.index::-webkit-scrollbar-track, .el-table__body-wrapper::-webkit-scrollbar-track
+{
+  -webkit-box-shadow: inset 0 0 3px rgba(0,0,0,0.001);
+  border-radius: 10px;
+  background-color: #F5F5F5;
+}
+
+/*定义滑块 内阴影+圆角*/
+.index::-webkit-scrollbar-thumb, .el-table__body-wrapper::-webkit-scrollbar-thumb
+{
+  border-radius: 10px;
+  -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.001);
+  background-color: #999;
+}
