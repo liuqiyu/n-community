@@ -35,7 +35,6 @@ app.use(function(req, res, next) {
     var url = req.url;
     // 判断不拦截的路由 出/login和/之外的都拦截
     if (url != '/user/login' && !req.session.name && url != '/user/register') {
-        console.log('跳转到登录页');
         res.render('login', { title: 'Express' });
         return;
     }
