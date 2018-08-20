@@ -7,6 +7,7 @@ yarn-error.log*
 .idea/workspace.xml
 
 config/index
+/sessions
 
 # Editor directories and files
 .idea
