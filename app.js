@@ -8,6 +8,20 @@ var router = require('./routers');
 
 var app = express();
 
+//设置跨域访问
+app.all('*', function(req, res, next) {
+    res.header('Access-Control-Allow-Origin', "*");
+    res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
+    res.header("Access-Control-Allow-Methods","PUT,POST,GET,DELETE,OPTIONS");
+    res.header("X-Powered-By",' 3.2.1');
+    res.header("Content-Type", "application/json;charset=utf-8");
+    // 将外源设为指定的域，比如：http://localhost:8080
+    res.header('Access-Control-Allow-Origin', "http://localhost:3000");
+    // 将Access-Control-Allow-Credentials设为true
+    res.header('Access-Control-Allow-Credentials', true); // 可以带cookies
+    next();
+});
+
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'jade');
@@ -31,15 +45,15 @@ app.use(session({
     },
 }));
 
-app.use(function(req, res, next) {
-    var url = req.url;
-    // 判断不拦截的路由 出/login和/之外的都拦截
-    if (url != '/user/login' && !req.session.name && url != '/user/register') {
-        res.render('login', { title: 'Express' });
-        return;
-    }
-    next();
-});
+// app.use(function(req, res, next) {
+//     var url = req.url;
+//     // 判断不拦截的路由 出/login和/之外的都拦截
+//     if (url != '/user/login' && !req.session.name && url != '/user/register') {
+//         res.render('login', { title: 'Express' });
+//         return;
+//     }
+//     next();
+// });
 
 router(app);
 
