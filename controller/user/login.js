@@ -6,7 +6,12 @@ var login = function(req, res) {
     var sql = "select * from user where username = '" + username + "'";
     db.query(sql, function(err, rows, fields) {
         if (err) {
-            return console.error(err);
+            return res.send({
+                code: 500,
+                status: 'error',
+                message: '登录失败！',
+                data: err,
+            });
         }
         if (rows.length > 0) {
             if (rows[0].password == password) {
