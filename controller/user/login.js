@@ -23,7 +23,7 @@ var login = function(req, res) {
                             message: '登录失败！！',
                         });
                     }
-                    req.session.username = rows[0].username;
+                    req.session.user = rows[0];
                     res.send({
                         code: 200,
                         status: 'success',

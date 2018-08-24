@@ -41,17 +41,21 @@ app.use(session({
     saveUninitialized: false,  // 是否自动保存未初始化的会话，建议false
     resave: false,             // 是否每次都重新保存会话，建议false
     cookie: {
-        maxAge: 10 * 10000,      // 有效期，单位是毫秒
+        maxAge: 1000 * 10000,      // 有效期，单位是毫秒
     },
 }));
 
 // app.use(function(req, res, next) {
 //     var url = req.url;
+//     console.log(url);
+//     console.log(req.query);
+//     console.log(req.params);
+//     console.log(req.sessionID);
 //     // 判断不拦截的路由 出/login和/之外的都拦截
-//     if (url != '/user/login' && !req.session.name && url != '/user/register') {
-//         res.render('login', { title: 'Express' });
-//         return;
-//     }
+//     // if (url != '/user/login' && !req.sessionID && url != '/user/register') {
+//     //     res.render('login', { title: 'Express' });
+//     //     return;
+//     // }
 //     next();
 // });
 

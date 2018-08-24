@@ -11,7 +11,7 @@ var getClass = function(req, res) {
                 data: err,
             });
         }
-        res.send({
+        return res.send({
             code: 200,
             status: 'success',
             data: rows,
