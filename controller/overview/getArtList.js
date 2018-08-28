@@ -16,8 +16,8 @@ var getArtList = function(req, res) {
     }
 
 
-    var sql = "select list.art_id, list.art_name, list.art_text, list.class_id, class.name class_name, list.tag_id, tag.name tag_name, list.create_date, list.update_date " +
-        "from article as list join art_class as class on class.id = list.class_id join art_tag as tag on tag.id = list.tag_id";
+    var sql = "select list.art_id, list.art_name, list.art_text, list.class_id, class.name class_name, list.tag_id, tag.name tag_name, user.username username, user.id user_id, list.create_date, list.update_date " +
+        "from article as list join art_class as class on class.id = list.class_id join art_tag as tag on tag.id = list.tag_id join user as user on user.id = list.user_id";
     db.query(sql, function(err, rows, fields) {
         if (err) {
             return res.send({
