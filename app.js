@@ -45,19 +45,24 @@ app.use(session({
     },
 }));
 
-// app.use(function(req, res, next) {
-//     var url = req.url;
-//     console.log(url);
-//     console.log(req.query);
-//     console.log(req.params);
-//     console.log(req.sessionID);
-//     // 判断不拦截的路由 出/login和/之外的都拦截
-//     // if (url != '/user/login' && !req.sessionID && url != '/user/register') {
-//     //     res.render('login', { title: 'Express' });
-//     //     return;
-//     // }
-//     next();
-// });
+app.use(function(req, res, next) {
+    var url = req.url;
+    console.log(req.query);
+    console.log(req.params);
+    // 判断不拦截的路由 出/login和/之外的都拦截
+    // if (url != '/user/login' && !req.sessionID && url != '/user/register') {
+    //     res.render('login', { title: 'Express' });
+    //     return;
+    // }
+    // if (req.sessionID !== req.query.session_id) {
+    //     return res.send({
+    //         code: 500,
+    //         status: 'error',
+    //         message: '登陆失效，请重新登陆！',
+    //     });
+    // }
+    next();
+});
 
 router(app);
 
