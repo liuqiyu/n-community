@@ -8,16 +8,20 @@ var getArtList = function(req, res) {
     let sql1 = '';
 
     if (req.query.class_id) {
-        sql1 += "where class_id = '" + req.query.class_id +"'";
+        sql1 += " where class_id = '" + req.query.class_id +"'";
     }
 
     if (req.query.tag_id) {
-        sql1 += "where tag_id = '" + req.query.tag_id +"'";
+        sql1 += " and tag_id = '" + req.query.tag_id +"'";
+    }
+
+    if (req.query.list_status !== '1') {
+        sql1 += " and user_id = '" + sess.user.id +"'";
     }
 
 
     var sql = "select list.art_id, list.art_name, list.art_text, list.class_id, class.name class_name, list.tag_id, tag.name tag_name, user.username username, user.id user_id, list.create_date, list.update_date " +
-        "from article as list join art_class as class on class.id = list.class_id join art_tag as tag on tag.id = list.tag_id join user as user on user.id = list.user_id";
+        "from article as list join art_class as class on class.id = list.class_id join art_tag as tag on tag.id = list.tag_id join user as user on user.id = list.user_id" + sql1 + " ORDER BY update_date desc";
     db.query(sql, function(err, rows, fields) {
         if (err) {
             return res.send({
