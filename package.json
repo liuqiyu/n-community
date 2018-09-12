@@ -3,7 +3,8 @@
   "version": "0.0.0",
   "private": true,
   "scripts": {
-    "start": "supervisor node ./bin/www"
+    "start": "supervisor node ./bin/www",
+    "pm2": "pm2 start processes.json"
   },
   "dependencies": {
     "cookie-parser": "~1.4.3",
