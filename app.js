@@ -16,7 +16,7 @@ app.all('*', function(req, res, next) {
     res.header("X-Powered-By",' 3.2.1');
     res.header("Content-Type", "application/json;charset=utf-8");
     // 将外源设为指定的域，比如：http://localhost:8080
-    res.header('Access-Control-Allow-Origin', "http://localhost:3000");
+    res.header('Access-Control-Allow-Origin', "http://localhost:3000", "http://39.108.61.54:8899");
     // 将Access-Control-Allow-Credentials设为true
     res.header('Access-Control-Allow-Credentials', true); // 可以带cookies
     next();
