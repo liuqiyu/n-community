@@ -31,6 +31,7 @@ var login = function(req, res) {
                         data: {
                             sessionID: req.sessionID,
                             username: rows[0].username,
+                            role: rows[0].role,
                         },
                     });
                 });
